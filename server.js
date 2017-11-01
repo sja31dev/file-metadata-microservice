@@ -6,12 +6,16 @@ var app = express();
 
 
 app.post('/fileupload', upload.any(), function (req, res, next) {
-  // req.file is the `avatar` file 
-  // req.body will hold the text fields, if there were any 
   var ans = {
     file_size: req.files[0].size
   };
   res.json(ans);
+  
+  // Delete the file so the disk doesn't fill up
+  fs.unlink(req.files[0].path, (err) => {
+    if (err) throw err;
+    console.log('Received and deleted '+ req.files[0].path + ' (was ' + req.files[0].size + ' bytes)');
+  });
 })
 
 app.use('/public', express.static(process.cwd() + '/public'));

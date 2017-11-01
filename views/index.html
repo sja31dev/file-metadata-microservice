@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Backend Challenges | Free Code Camp</title>
+    <link rel="shortcut icon" href="https://cdn.hyperdev.com/us-east-1%3A52a203ff-088b-420f-81be-45bf559d01b1%2Ffavicon.ico" type="image/x-icon"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <link href="/public/style.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>File Metadata Microservice</h1>
+      <h3>Part 5 of Free Code Camp Backend Challenges</h3>
+      <ol>
+        <li>User Story: I can submit a FormData object that includes a file upload.</li>
+        <li>User Story: When I submit something, I will receive the file size in bytes within the JSON response.</li>
+      </ol>
+      
+      
+      <form enctype="multipart/form-data" action="/fileupload" method="POST">
+        <input type="hidden" name="MAX_FILE_SIZE" value="100000" />
+        <span>Choose a file to upload: </span><input name="file" type="file" />
+        <input type="submit" value="Upload" id="upload" />
+      </form>
+
+    </div>
+  </body>
+
+</html>
